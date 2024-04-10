@@ -1,3 +1,3 @@
 # FilmBox
 
-Závěrečný projekt kurzu JS 1.
+https://pandatech2712.github.io/Film-Box/
