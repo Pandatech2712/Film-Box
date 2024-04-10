@@ -125,6 +125,41 @@ plakat.src = film.plakat.url
 plakat.width = film.plakat.sirka
 plakat.height = film.plakat.vyska
 
+//7.úkol/////////////////////////////////////////////
+let poradiHvezd = 0;
+const stars = document.querySelectorAll(".fa-star");
+
+const choose = (cislo) => {
+    stars.forEach((star, index) => {
+        if (index < cislo) {
+            star.classList.remove("far");
+            star.classList.add("fas");
+        } else {
+            star.classList.remove("fas");
+            star.classList.add("far");
+        }
+    });
+};
+
+const handleClick = (event) => {
+    poradiHvezd = Number(event.target.textContent);
+    choose(poradiHvezd);
+};
+
+const handleMouseEnter = (event) => {
+    const cislo = Number(event.target.textContent);
+    choose(cislo);
+};
+
+const handleMouseLeave = () => {
+    choose(poradiHvezd);
+};
+
+stars.forEach((star) => {
+    star.addEventListener("click", handleClick);
+    star.addEventListener("mouseenter", handleMouseEnter);
+    star.addEventListener("mouseleave", handleMouseLeave);
+});
 
 
 //8.úkol/////////////////////////////////
